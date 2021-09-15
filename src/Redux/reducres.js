@@ -36,7 +36,7 @@ export const todosreducer =(state=initiatestate,action)=>{
           case EDIT :
             return {
                 ...state,
-                tasks : state.tasks.map(el=> el.id == action.payload.ID? {...el, text:action.payload.textinput}:el )
+                todos : state.todos.map(el=> el.id == action.payload.ID? {...el, text:action.payload.textinput}:el )
             }
 
             default:return state;

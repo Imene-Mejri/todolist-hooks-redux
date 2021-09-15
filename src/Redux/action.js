@@ -1,4 +1,4 @@
-import {DELETE,DONE,ADD} from './action-types'
+import {DELETE,DONE,ADD,EDIT} from './action-types'
 
 
 
@@ -21,5 +21,11 @@ export const addhandler=(nwetodo)=>{
     return{
         type:ADD,
         payload:nwetodo
+    }
+}
+export const Edithandler =(ID,textinput)=>{
+    return{
+    type:EDIT,
+    payload:{ID,textinput}
     }
 }

@@ -10,14 +10,17 @@ export default function Addtodo() {
    const [input,setinput]=useState('')
 
    const newTask = () => {
+    input &&
     dispatch(
         addhandler({
+           
             id : Math.random(), 
             text : input,
             isDONE : false,
          
         })
     )
+    setinput('')
   
 }
     return (

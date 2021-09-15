@@ -9,7 +9,7 @@ import Addtodo from './components/Addtodo';
 function App() {
   return (
     <div className="App">
-      <h1>TODOLISTREDUX</h1>
+      <h1>TODO-LIST-REDUX</h1>
       <Addtodo/>
      <Todolist/>
     </div>

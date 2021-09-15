@@ -32,7 +32,28 @@ margin-top: 150px;
 .done{
   text-decoration: line-through;
 }
+.Modal{
+  height: 350px;
+  width: 550px;
+  padding: 90px;
+  margin-right: 350px;
+  margin-left: 450px;
+  margin-top: 150px;
+  background-color: blue;
 
+}
+.Modal input{
+  width: 60%;
+  height: 30px;
+  color: black;
+  font-size: medium;
+margin: 50px;
+}
+.Modal button {
+  width: 70px;
+  height: 35px;
+  background-color: white;
+}
 .todo{
   display: flex;
   justify-content: space-evenly;

@@ -1,6 +1,6 @@
 
 
-import {DELETE,DONE,ADD} from './action-types'
+import {DELETE,DONE,ADD,EDIT} from './action-types'
 
 
 
@@ -33,7 +33,11 @@ export const todosreducer =(state=initiatestate,action)=>{
           return {
               ...state,todos:[...state.todos,action.payload],
           }
-
+          case EDIT :
+            return {
+                ...state,
+                tasks : state.tasks.map(el=> el.id == action.payload.ID? {...el, text:action.payload.textinput}:el )
+            }
 
             default:return state;
     }

@@ -1,6 +1,8 @@
 
 import { useDispatch } from 'react-redux'
 import {deletehandler,donehandler } from '../Redux/action'
+import Edit from './Edit'
+
 
 
 export default function Todo({ tasks }) {
@@ -17,7 +19,9 @@ export default function Todo({ tasks }) {
             <button onClick={()=>dispatch(deletehandler(tasks.id))}>delete</button>
 
                 <button  onClick={()=>dispatch(donehandler(tasks.id))}  className='btn-icon'>done</button>
-            </div>
+            
+           </div>
+            <Edit tasks={tasks}/>
         </div>
     )
 }

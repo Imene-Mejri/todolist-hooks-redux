@@ -12,6 +12,7 @@ function App() {
       <h1>TODO-LIST-REDUX</h1>
       <Addtodo/>
      <Todolist/>
+     
     </div>
   );
 }

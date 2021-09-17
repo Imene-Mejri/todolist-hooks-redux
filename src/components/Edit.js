@@ -1,38 +1,38 @@
 import React from 'react'
-import {useState} from 'react'
+import { useState } from 'react'
 import Modal from 'react-modal'
 import { Edithandler } from '../Redux/action'
 import { useDispatch } from 'react-redux'
-import { todosreducer } from '../Redux/reducres'
 
-export default function Edit({tasks}) {
+
+export default function Edit({ tasks }) {
     Modal.setAppElement(`#root`)
-  const dispatch=useDispatch();
-  //const [newinput,setnewinput]=useState('')
-
-  const [show,setshow]=useState(false)
-  const [edit,setedit]=useState()
+    const dispatch = useDispatch();
 
 
-    const toggle=()=>{
+    const [show, setshow] = useState(false)
+    const [edit, setedit] = useState()
+
+
+    const toggle = () => {
         setshow(!show)
     }
 
 
-    const Edittodo=()=>{
-        dispatch(Edithandler(tasks.id,edit))
+    const Edittodo = () => {
+        dispatch(Edithandler(tasks.id, edit))
         toggle()
     }
-    
-    
+
+
     return (
         <div className='edit'>
-             <button onClick={toggle}>edit</button>
+            <button onClick={toggle}>edit</button>
             <Modal className='Modal' isOpen={show}>
-            
-            <input value={tasks.text} onChange={(e)=>setedit(e.target.value)} placeholder='edit me'/>
-            <button onClick={Edittodo}>confirm</button>
-            <button onClick={toggle}>cancel</button>
+
+                <input value={tasks.text} onChange={(e) => setedit(e.target.value)} placeholder='edit me' />
+                <button onClick={Edittodo}>confirm</button>
+                <button onClick={toggle}>cancel</button>
             </Modal>
         </div>
     )

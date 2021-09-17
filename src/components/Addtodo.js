@@ -2,6 +2,7 @@ import React from 'react'
 import { addhandler } from '../Redux/action'
 import {useDispatch} from 'react-redux';
 import {useState} from 'react'
+import Filter from './Filter'
 
 
 export default function Addtodo() {
@@ -29,7 +30,7 @@ export default function Addtodo() {
             <input value={input} onChange={(e)=>setinput(e.target.value)} type='text' placeholder='write here your items' />
           
             <button onClick={newTask} type='button' >Add</button>
-          
+            <Filter/>
         </div>
     )
 }

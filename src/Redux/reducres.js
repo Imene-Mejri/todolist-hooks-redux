@@ -1,6 +1,6 @@
 
 
-import {DELETE,DONE,ADD,EDIT,FILTER,FilteredTodos} from './action-types'
+import {DELETE,DONE,ADD,EDIT,Filter,Filtering} from './action-types'
 
 
 
@@ -12,7 +12,7 @@ const initiatestate ={
       {text:'call me back' ,id:2 , isDONE:false}
   ] ,
   filter : 'All',
-  filteredTodos : [] 
+  filteredTodos : [],
 }
 
 
@@ -40,22 +40,21 @@ export const todosreducer =(state=initiatestate,action)=>{
                 ...state,
                 todos : state.todos.map(el=> el.id == action.payload.ID? {...el, text:action.payload.textinput}:el )
             }
-            case FILTER :
-                return {
-                    ...state,
-                    filter:action.payload.status
-                }
-                case FilteredTodos :
-                  return {
-                      ...state,
-                      filteredTodos:  state.filter==="Completed"? state.todos.filter(el=>el. isDONE==true):
-                                      state.filter==="Uncompleted"? state.todos.filter(el=>el. isDONE==false):
-                                      state.filter==="All"? state.todos:
-                                      null
-                  }
-
-            default:return state;
+            case Filter :
+        return {
+            ...state,
+            filter:action.payload.cas
+        }
+    case Filtering :
+        return {
+            ...state,
+            filteredTodos:  state.filter==="Completed"? state.todos.filter(el=>el.isDONE===true):
+                            state.filter==="Uncompleted"? state.todos.filter(el=>el.isDONE===false):
+                            state.filter==="All"? state.todos:
+                            null
+        }
+        default:return state
+           
     }
-
 }
 

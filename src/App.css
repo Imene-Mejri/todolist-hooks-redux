@@ -66,5 +66,9 @@ margin: 30px;
 }
 .addtodo{
   padding-top: 90px;
+ 
 }
-
+.select{
+  background-color:white;
+  color:black;
+}

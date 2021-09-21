@@ -11,7 +11,7 @@ export default function Edit({ tasks }) {
 
 
     const [show, setshow] = useState(false)
-    const [edit, setedit] = useState()
+    const [edit, setedit] = useState('')
 
 
     const toggle = () => {
@@ -30,7 +30,7 @@ export default function Edit({ tasks }) {
             <button onClick={toggle}>edit</button>
             <Modal className='Modal' isOpen={show}>
 
-                <input value={tasks.text} onChange={(e) => setedit(e.target.value)} placeholder='edit me' />
+                <input  onChange={(e) => setedit(e.target.value)} placeholder='edit me' />
                 <button onClick={Edittodo}>confirm</button>
                 <button onClick={toggle}>cancel</button>
             </Modal>

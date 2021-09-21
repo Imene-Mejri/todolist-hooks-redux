@@ -1,4 +1,4 @@
-import {DELETE,DONE,ADD,EDIT,FILTER, FilteredTodos} from './action-types'
+import {DELETE,DONE,ADD,EDIT,Filter, Filtering} from './action-types'
 
 
 
@@ -29,17 +29,19 @@ export const Edithandler =(ID,textinput)=>{
     payload:{ID,textinput}
     }
 }
-export const Filtering =(status)=>{
+
+
+export const inputfilter =(cas)=>{
     return {
-        type:FILTER,
-        payload:{status}
+        type: Filter,
+        payload:{cas}
 
     }
 }
 
 export const FilterHandler =()=>{
-          return {
-              type: FilteredTodos
+    return {
+        type: Filtering
            
-          }
-      }
+    }
+}

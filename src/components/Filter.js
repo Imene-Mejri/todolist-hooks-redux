@@ -1,31 +1,31 @@
+
+
+
 import { useDispatch } from "react-redux";
-import { Filtering } from "../Redux/action";
+import { inputfilter } from "../Redux/action";
 
-
+import React from 'react'
 
 export default function Filter() {
-    
+    const dispatch=useDispatch()
 
-    const dispatch = useDispatch()
-
-    const statusHandler=(e)=>{
-        dispatch (Filtering(e.target.value))}
-
-    
-
-    
-
+    const casHandler=(e)=>{
+        dispatch ( inputfilter(e.target.value))}
     return (
-        <div className='filter'>
-            <label for="cars">Choose a your options:</label>
-
-           <select  onChange={statusHandler} name="cars" id="cars">
-               <option value="ALL">ALL</option>
-               <option value="completed">completed</option>
-               <option value="incompleted">incompleted</option>
-         
-           </select>
+        <div>
+            <select onChange={casHandler} className="select">
+                <option value="All">All</option>
+                <option value="Completed">Completed</option>
+                <option value="Uncompleted">Uncompleted</option>
+            </select>  
             
         </div>
     )
 }
+
+
+
+
+
+
+   
